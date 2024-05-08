@@ -33,8 +33,10 @@ class WebTrendingServiceView extends StatelessWidget {
                   GridView.builder(
                     key: UniqueKey(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisSpacing: Dimensions.paddingSizeDefault,
-                      mainAxisSpacing:  Dimensions.paddingSizeDefault,
+                      crossAxisSpacing: Dimensions.paddingSizeExtraLarge,
+                      mainAxisSpacing:  Dimensions.paddingSizeExtraLarge,
+
+                      mainAxisExtent:280,
                       childAspectRatio: ResponsiveHelper.isDesktop(context) || ResponsiveHelper.isTab(context)  ? 0.92 : .70,
                       crossAxisCount: ResponsiveHelper.isMobile(context) ? 2 : ResponsiveHelper.isTab(context) ? 3 : 5,
                     ),

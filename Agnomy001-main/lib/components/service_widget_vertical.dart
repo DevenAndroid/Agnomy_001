@@ -113,47 +113,52 @@ class ServiceWidgetVertical extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'starts_from'.tr,
+                              '3 Services Provider'.tr,
+                              style: ubuntuRegular.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).colorScheme.primary),
+                            ),
+                            Text(
+                              'Within 25 Miles'.tr,
                               style: ubuntuRegular.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(.6)),
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                if(discountModel.discountAmount! > 0)
-                                  Directionality(
-                                    textDirection: TextDirection.ltr,
-                                    child: Text(
-                                      PriceConverter.convertPrice(lowestPrice.toDouble()),
-                                      maxLines: 2,
-                                      style: ubuntuRegular.copyWith(
-                                          fontSize: Dimensions.fontSizeSmall,
-                                          decoration: TextDecoration.lineThrough,
-                                          color: Theme.of(context).colorScheme.error.withOpacity(.8)),),
-                                  ),
-                                discountModel.discountAmount! > 0?
-                                Directionality(
-                                  textDirection: TextDirection.ltr,
-                                  child: Text(
-                                    PriceConverter.convertPrice(
-                                        lowestPrice.toDouble(),
-                                        discount: discountModel.discountAmount!.toDouble(),
-                                        discountType: discountModel.discountAmountType),
-                                    style: ubuntuMedium.copyWith(
-                                        fontSize: Dimensions.paddingSizeDefault,
-                                        color:  Get.isDarkMode? Theme.of(context).primaryColorLight: Theme.of(context).primaryColor),
-                                  ),
-                                ):
-                                Directionality(
-                                  textDirection: TextDirection.ltr,
-                                  child: Text(
-                                    PriceConverter.convertPrice(lowestPrice.toDouble()),
-                                    style: ubuntuMedium.copyWith(
-                                        fontSize:Dimensions.fontSizeDefault,
-                                        color: Get.isDarkMode? Theme.of(context).primaryColorLight: Theme.of(context).primaryColor),
-                                  ),
-                                ),
-                              ],
-                            ),
+                            Icon(Icons.man)
+                            // Column(
+                            //   crossAxisAlignment: CrossAxisAlignment.start,
+                            //   children: [
+                            //     if(discountModel.discountAmount! > 0)
+                            //       Directionality(
+                            //         textDirection: TextDirection.ltr,
+                            //         child: Text(
+                            //           PriceConverter.convertPrice(lowestPrice.toDouble()),
+                            //           maxLines: 2,
+                            //           style: ubuntuRegular.copyWith(
+                            //               fontSize: Dimensions.fontSizeSmall,
+                            //               decoration: TextDecoration.lineThrough,
+                            //               color: Theme.of(context).colorScheme.error.withOpacity(.8)),),
+                            //       ),
+                            //     discountModel.discountAmount! > 0?
+                            //     Directionality(
+                            //       textDirection: TextDirection.ltr,
+                            //       child: Text(
+                            //         PriceConverter.convertPrice(
+                            //             lowestPrice.toDouble(),
+                            //             discount: discountModel.discountAmount!.toDouble(),
+                            //             discountType: discountModel.discountAmountType),
+                            //         style: ubuntuMedium.copyWith(
+                            //             fontSize: Dimensions.paddingSizeDefault,
+                            //             color:  Get.isDarkMode? Theme.of(context).primaryColorLight: Theme.of(context).primaryColor),
+                            //       ),
+                            //     ):
+                            //     Directionality(
+                            //       textDirection: TextDirection.ltr,
+                            //       child: Text(
+                            //         PriceConverter.convertPrice(lowestPrice.toDouble()),
+                            //         style: ubuntuMedium.copyWith(
+                            //             fontSize:Dimensions.fontSizeDefault,
+                            //             color: Get.isDarkMode? Theme.of(context).primaryColorLight: Theme.of(context).primaryColor),
+                            //       ),
+                            //     ),
+                            //   ],
+                            // ),
                           ]),
                     ),
                   ],),

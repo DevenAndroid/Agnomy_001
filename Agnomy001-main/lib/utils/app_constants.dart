@@ -4,8 +4,7 @@ import 'package:demandium/utils/images.dart';
 class AppConstants {
   static const String appName = 'Agnomy';
   static const String appVersion = '2.3';
-  static const String baseUrl = 'https://demandium.eo'
-      'xyslive.com';
+  static const String baseUrl = 'https://admin.agnomy.com';
   static const String categoryUrl = '/api/v1/customer/category?limit=20';
   static const String webLandingContents = '/api/v1/customer/landing/contents';
   static const String bannerUri = '/api/v1/customer/banner?limit=10&offset=1';

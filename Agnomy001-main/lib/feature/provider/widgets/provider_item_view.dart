@@ -82,13 +82,14 @@ class ProviderItemView extends StatelessWidget {
               style: ubuntuRegular.copyWith(fontSize: Dimensions.fontSizeSmall,color: Theme.of(context).secondaryHeaderColor), maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
+            const SizedBox(height: Dimensions.paddingSizeSmall),
 
             Row(children: [
               Padding(padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
                 child: Image.asset(Images.iconLocation, height:12)),
 
               Flexible(
-                child: Text(providerData.companyAddress??"",
+                child: Text('10 miles away',
                   style: ubuntuLight.copyWith(color:Get.isDarkMode? Theme.of(context).secondaryHeaderColor:Theme.of(context).primaryColorDark,fontSize: 12),
                   overflow: TextOverflow.ellipsis),
               ),

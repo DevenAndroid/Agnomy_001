@@ -1,9 +1,24 @@
 import 'package:get/get.dart';
 import 'package:demandium/components/core_export.dart';
 
-class CategoryView extends StatelessWidget {
+class CategoryView extends StatefulWidget {
   const CategoryView({super.key});
 
+  @override
+  State<CategoryView> createState() => _CategoryViewState();
+}
+
+class _CategoryViewState extends State<CategoryView> {
+  String dropdownvalue = '0-5';
+
+  // List of items in our dropdown menu
+  var items = [
+    '0-5',
+    '5-10',
+    '10-15',
+    '15-20',
+    '20-25',
+  ];
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CategoryController>(builder: (categoryController) {
@@ -20,9 +35,36 @@ class CategoryView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text('all_categories'.tr, style: ubuntuMedium.copyWith(fontSize: Dimensions.fontSizeExtraLarge)),
+                          SizedBox(width:Dimensions.paddingSizeLarge),
+                          DropdownButton(
+
+                            // Initial Value
+                            value: dropdownvalue,
+
+                            // Down Arrow Icon
+                            icon: const Icon(Icons.keyboard_arrow_down),
+
+                            // Array list of items
+                            items: items.map((String items) {
+                              return DropdownMenuItem(
+                                value: items,
+                                child: Text(items,style: ubuntuMedium.copyWith(fontSize: Dimensions.fontSizeExtraLarge)),
+                              );
+                            }).toList(),
+                            // After selecting the desired option,it will
+                            // change button value to selected value
+                            onChanged: (String? newValue) {
+
+                               setState(() {
+                                 dropdownvalue = newValue!;
+                               }
+
+                               );
+                            },
+                          ),
+                          Spacer(),
                           InkWell(
                             onTap: () {
 
@@ -44,10 +86,10 @@ class CategoryView extends StatelessWidget {
                       GridView.builder(
                         shrinkWrap: true,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: ResponsiveHelper.isDesktop(context) ? 8 : ResponsiveHelper.isTab(context) ? 6 : 4,
-                            crossAxisSpacing: Dimensions.paddingSizeSmall,
-                            mainAxisSpacing: Dimensions.paddingSizeSmall,
-                            childAspectRatio: ResponsiveHelper.isDesktop(context) ? 1 : 1,
+                          crossAxisCount: ResponsiveHelper.isDesktop(context) ? 8 : ResponsiveHelper.isTab(context) ? 6 : 4,
+                          crossAxisSpacing: Dimensions.paddingSizeSmall,
+                          mainAxisSpacing: Dimensions.paddingSizeSmall,
+                          childAspectRatio: ResponsiveHelper.isDesktop(context) ? 1 : 1,
                         ),
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount: categoryController.categoryList!.length > 8 ? 8 : categoryController.categoryList!.length,
@@ -55,9 +97,9 @@ class CategoryView extends StatelessWidget {
                           return InkWell(
                             onTap: () {
                               Get.toNamed(RouteHelper.getCategoryProductRoute(
-                                categoryController.categoryList![index].id!,
-                                categoryController.categoryList![index].name!,
-                                index.toString()
+                                  categoryController.categoryList![index].id!,
+                                  categoryController.categoryList![index].name!,
+                                  index.toString()
                               ));
                             },
 

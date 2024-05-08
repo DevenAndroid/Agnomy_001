@@ -42,6 +42,7 @@ class WebPopularServiceView extends StatelessWidget {
                     childAspectRatio:ResponsiveHelper.isMobile(context) ? 0.78 : 0.79,
                     crossAxisSpacing: Dimensions.paddingSizeDefault,
                     mainAxisSpacing: Dimensions.paddingSizeDefault,
+                    mainAxisExtent:280
                   ),
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
