@@ -4,7 +4,8 @@ import 'package:demandium/utils/images.dart';
 class AppConstants {
   static const String appName = 'Agnomy';
   static const String appVersion = '2.3';
-  static const String baseUrl = 'https://admin.agnomy.com';
+  static const String baseUrl = 'https://demandium.eo'
+      'xyslive.com';
   static const String categoryUrl = '/api/v1/customer/category?limit=20';
   static const String webLandingContents = '/api/v1/customer/landing/contents';
   static const String bannerUri = '/api/v1/customer/banner?limit=10&offset=1';
@@ -32,7 +33,7 @@ class AppConstants {
   static const String configUri = '/api/v1/customer/config';
   static const String customerRemove = '/api/v1/customer/remove-account';
   static const String registerUri = '/api/v1/customer/auth/registration';
-  static const String loginUri = '/api/v1/customer/auth/login';
+  static const String loginUri = '/admin/customer/auth/login';
   static const String loginOut = '/api/v1/customer/auth/logout';
   static const String addToCart = '/api/v1/customer/cart/add';
   static const String getCartList =

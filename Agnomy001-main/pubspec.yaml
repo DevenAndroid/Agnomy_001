@@ -4,7 +4,7 @@ publish_to: 'none' #
 version: 1.0.3+4
 
 environment:
-  sdk: ">=2.19.0 <3.0.0"
+  sdk: ">=2.19.0 <3.19.6"
 
 dependencies:
   flutter:
@@ -24,6 +24,7 @@ dependencies:
   google_maps_flutter_web: ^0.4.0+7
   geolocator: ^9.0.2
   url_launcher: ^6.1.11
+  web: ^0.5.1
   country_code_picker: ^3.0.0
   phone_number: ^1.0.0
   webview_flutter: ^4.0.7
